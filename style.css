@@ -1,0 +1,160 @@
+
+/* GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f8fafc;
+    color: #1e293b;
+    line-height: 1.7;
+}
+
+/* NAVIGATION */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.navbar h2 {
+    color: #172b4d;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #475569;
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+.navbar a:hover {
+    color: #2563eb;
+}
+
+/* HERO */
+.hero {
+    background: #172b4d;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.tag {
+    color: #93c5fd;
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    color: #93c5fd;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.hero p:not(.tag) {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    color: #cbd5e1;
+}
+
+.button {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.button:hover {
+    background: #1d4ed8;
+}
+
+/* CONTENT SECTIONS */
+.section {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 35px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+}
+
+.section h2 {
+    color: #172b4d;
+    margin-bottom: 20px;
+}
+
+/* PROJECT CARDS */
+.project {
+    padding: 22px;
+    margin-top: 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+}
+
+.project h3 {
+    color: #172b4d;
+    margin-bottom: 10px;
+}
+
+.project span {
+    display: inline-block;
+    margin-top: 12px;
+    color: #2563eb;
+    font-size: 13px;
+}
+
+.status {
+    color: #b45309;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #172b4d;
+    color: #cbd5e1;
+    font-size: 13px;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .navbar a {
+        margin: 0 6px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero h2 {
+        font-size: 20px;
+    }
+
+    .section {
+        margin: 25px 15px;
+        padding: 25px;
+    }
+}
