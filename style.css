@@ -237,7 +237,72 @@ footer {
     border: 1px solid #e2e8f0;
     border-radius: 8px;
 }
+/* ===== IMAGE ZOOM ===== */
+.zoom-btn {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: zoom-in;
+}
 
+.zoom-btn:hover img {
+    border-color: var(--accent);
+}
+
+.zoom-btn:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    max-width: 95vw;
+    max-height: 95vh;
+    overflow: visible;
+}
+
+.lightbox::backdrop {
+    background: rgba(15, 23, 42, 0.85);
+}
+
+.lightbox img {
+    display: block;
+    max-width: 95vw;
+    max-height: 82vh;
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+    background: #ffffff;
+}
+
+.lightbox-caption {
+    margin-top: 10px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 14px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 36px;
+    height: 36px;
+    border: 0;
+    border-radius: 50%;
+    background: #ffffff;
+    color: var(--ink);
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+}
 /* ===== MOBILE RESPONSIVE (keep this LAST so it overrides the rules above) ===== */
 @media (max-width: 600px) {
     .navbar {
