@@ -56,22 +56,27 @@
             </p>
 
             <div class="project-gallery">
-                <div class="gallery-item">
-                    <h4>1. Automation Workflow</h4>
-                    <img src="images/workflow.png" alt="n8n workflow that classifies Gmail messages and creates reply drafts">
-                </div>
+    <div class="gallery-item">
+        <h4>1. Automation Workflow</h4>
+        <button type="button" class="zoom-btn" aria-label="Zoom in on the automation workflow screenshot">
+            <img src="images/workflow.png" alt="n8n workflow that classifies Gmail messages and creates reply drafts">
+        </button>
+    </div>
 
-                <div class="gallery-item">
-                    <h4>2. Gmail Inbox Organization</h4>
-                    <img src="images/inbox.png" alt="Gmail inbox with emails sorted by Inquiry, Complaint, Order, and Other labels">
-                </div>
+    <div class="gallery-item">
+        <h4>2. Gmail Inbox Organization</h4>
+        <button type="button" class="zoom-btn" aria-label="Zoom in on the Gmail inbox screenshot">
+            <img src="images/inbox.png" alt="Gmail inbox with emails sorted by Inquiry, Complaint, Order, and Other labels">
+        </button>
+    </div>
 
-                <div class="gallery-item">
-                    <h4>3. AI-Generated Drafts</h4>
-                    <img src="images/drafts.png" alt="Gmail drafts written by the AI for customer review">
-                </div>
-            </div>
-
+    <div class="gallery-item">
+        <h4>3. AI-Generated Drafts</h4>
+        <button type="button" class="zoom-btn" aria-label="Zoom in on the AI-generated drafts screenshot">
+            <img src="images/drafts.png" alt="Gmail drafts written by the AI for customer review">
+        </button>
+    </div>
+</div>
             <h4>Key Features</h4>
             <ul>
                 <li>Automatic email classification.</li>
@@ -105,6 +110,32 @@
     <footer>
         <p>© 2026 Ansari Sarip | AI Automation Portfolio</p>
     </footer>
+<dialog id="lightbox" class="lightbox">
+    <button type="button" id="lightbox-close" class="lightbox-close" aria-label="Close">×</button>
+    <img id="lightbox-img" src="" alt="">
+    <p id="lightbox-caption" class="lightbox-caption"></p>
+</dialog>
 
+<script>
+    const dialog = document.getElementById('lightbox');
+    const bigImg = document.getElementById('lightbox-img');
+    const caption = document.getElementById('lightbox-caption');
+
+    document.querySelectorAll('.zoom-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            const img = btn.querySelector('img');
+            bigImg.src = img.src;
+            bigImg.alt = img.alt;
+            caption.textContent = btn.closest('.gallery-item').querySelector('h4').textContent;
+            dialog.showModal();
+        });
+    });
+
+    dialog.addEventListener('click', function (e) {
+        if (e.target === dialog || e.target.id === 'lightbox-close') {
+            dialog.close();
+        }
+    });
+</script>
 </body>
 </html>
